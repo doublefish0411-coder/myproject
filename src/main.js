@@ -211,7 +211,7 @@ window.isWarping = false;
 // 使用事件委托，监听整个 body 的点击行为
 document.body.addEventListener('click', function(e) {
     // 检查点击的目标是否为导航栏里的 <a> 标签
-    const targetLink = e.target.closest('.retro-nav a');
+    const targetLink = e.target.closest('.retro-link');
     
     // 如果不是，直接跳过
     if (!targetLink) return;
@@ -269,3 +269,5 @@ window.addEventListener('load', () => {
         }, 100);
     }
 });
+
+//音乐//
