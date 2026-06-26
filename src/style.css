@@ -250,3 +250,44 @@ body {
   background-color: #000000;
   z-index: 100;
 }
+
+/* 针对手机屏幕 (宽度小于 768px) */
+@media (max-width: 768px) {
+  /* 1. 减小所有模块的内外边距，节省空间 */
+  main {
+    padding: 20px 10px !important;
+    grid-template-columns: 1fr !important; /* 强制所有内容单列排列 */
+  }
+
+  section, blockquote {
+    grid-column: 1 / -1 !important; /* 强制占满全宽 */
+    margin-top: 40px !important;
+    margin-bottom: 40px !important;
+  }
+
+  /* 2. 标题字号缩小，避免换行太难看 */
+  header { font-size: 2rem !important; margin-top: 50px !important; }
+  blockquote p { font-size: 2.5rem !important; }
+
+  /* 3. 作品列表页适配 */
+  .project-container {
+    grid-template-columns: 1fr !important; /* 侧边栏和内容堆叠 */
+    padding: 20px !important;
+  }
+
+  .project-sidebar {
+    position: relative !important; /* 取消 sticky，让它随页面滚动 */
+    width: 100% !important;
+    margin-left: 0 !important;
+    height: auto !important;
+    margin-bottom: 30px;
+  }
+
+  .media-content {
+    grid-template-columns: 1fr !important; /* 图片从两列变一列 */
+  }
+
+  .poster-grid {
+    grid-template-columns: repeat(2, 1fr) !important; /* 海报从三列变两列 */
+  }
+}
